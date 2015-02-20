@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BeaconLib Example</string>
+    <string name="voice_trigger">scan for beacons</string>
+    <string name="beacons_found">Number of Beacons found:</string>
+    <string name="zero">0</string>
+
+</resources>

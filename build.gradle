@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.acompagno:localcheck:0.1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.acompagno.localcheck'
+
+android {
+    compileSdkVersion "Google Inc.:Glass Development Kit Preview:19"
+    buildToolsVersion "21.1.1"
+
+    defaultConfig {
+        applicationId "glass.walker.blue.beacon.lib"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile LC.checkLocal('blue.walker:beacon-lib:0.1.+', 'BeaconLib')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
